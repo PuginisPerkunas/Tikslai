@@ -1,14 +1,28 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import {DrawerNavigator} from 'react-navigation';
+
+import PridetiScreen from './screens/PridetiScreen';
+import IvygdytiScreen from './screens/IvygdytiScreen';
+import NeigyvendintiScreen from './screens/NeigyvendintiScreen';
+import SideMenu from './sideMenu/SideMenu';
+
+const TiksluApp = DrawerNavigator ({
+      PridetiScreen: {screen : PridetiScreen},
+      IvygdytiScreen: {screen : IvygdytiScreen},
+      NeigyvendintiScreen: {screen : NeigyvendintiScreen},
+  },//screens section 
+  {
+    title : 'Uzduotys',
+    drawerWidth: 400,
+    drawerBackgroundColor: '#8cffcf'
+  }//drawer propertys done
+);//drawer done
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+        <TiksluApp/>
     );
   }
 }
