@@ -16,16 +16,16 @@ const TiksluApp = DrawerNavigator ({
     title : 'Uzduotys',
     drawerWidth: 400,
     drawerBackgroundColor: '#8cffcf'
-  }//drawer propertys done
-);//drawer done
+  }//drawer propertys END
+);//drawer END
 
 export default class App extends React.Component {
   render() {
     return (
         <TiksluApp/>
-    );
-  }
-}
+    );//return END
+  }//render END
+}//class END
 
 const styles = StyleSheet.create({
   container: {
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+});//styles END
