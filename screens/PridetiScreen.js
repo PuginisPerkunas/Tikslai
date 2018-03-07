@@ -20,6 +20,7 @@ import {
     ScrollView,
     Image
 } from 'react-native';
+import IvygdytiScreen from './IvygdytiScreen';
 
 const { width } = Dimensions.get('window') // for screen dimension
 
@@ -117,30 +118,30 @@ export default class PridetiScreen extends Component{
                 d.push(dataSend)
                 AsyncStorage.setItem('ToDB', JSON.stringify(d)).then(()=>{
                 this.props.navigator.push({
-                title: 'Skelbimai',
-                 component: SkelbimoScreen 
+                title: 'PridetiScreen',
+                 component: PridetiScreen 
                 })
                 })
                 Alert.alert(
                     'Prideta!',
                     'Uzduotis pavadinimu: ' + '"'+ dataSend.pavadinimas + '"' + ' sekmingai prideta',
                     [
-                      {text: 'OK', onPress: () => navigate('SkelbimoScreen')},
+                      {text: 'OK', onPress: () => navigate('PridetiScreen')},
                     ],
                     { cancelable: false }
                   )
             } else {
-                AsyncStorage.setItem('DB_form', JSON.stringify(array)).then(()=>{
+                AsyncStorage.setItem('ToDB', JSON.stringify(array)).then(()=>{
                 this.props.navigator.push({
-                title: 'Skelbimai',
-                component: SkelbimoScreen 
+                title: 'PridetiScreen',
+                component: PridetiScreen 
                 })
                 })
                 Alert.alert(
                     'Prideta!',
                     'Uzduotis pavadinimu: ' + '"'+ dataSend.pavadinimas + '"' + ' sekmingai prideta',
                     [
-                        {text: 'OK', onPress: () => navigate('SkelbimoScreen')},
+                        {text: 'OK', onPress: () => navigate('PridetiScreen')},
                     ],
                     { cancelable: false }
                   )
